@@ -11,12 +11,16 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
+      'app/bower_components/jquery/jquery.js',
       'app/bower_components/angular/angular.js',
       'app/bower_components/angular-mocks/angular-mocks.js',
+      'app/bower_components/signature_pad/signature_pad.js',
       'app/scripts/*.js',
       'app/scripts/**/*.js',
-      'test/mock/**/*.js',
-      'test/spec/**/*.js'
+//      'test/mock/**/*.js',
+      'test/spec/**/*.js',
+      'app/directives/*.html',
+      'app/views/*.html'
     ],
 
     // list of files / patterns to exclude
@@ -29,6 +33,15 @@ module.exports = function(config) {
     // possible values: LOG_DISABLE || LOG_ERROR || LOG_WARN || LOG_INFO || LOG_DEBUG
     logLevel: config.LOG_INFO,
 
+    // generate js files from html templates
+    preprocessors: {
+      'app/views/*.html': ['ng-html2js'],
+      'app/directives/*.html': ['ng-html2js']
+    },
+
+    ngHtml2JsPreprocessor: {
+      stripPrefix: 'app/'
+    },
 
     // enable / disable watching file and executing tests whenever any file changes
     autoWatch: false,

@@ -35,6 +35,7 @@ app.directive('signPad', function ($window) {
       elem.find('#sign-pad-save').on('click', function () {
         console.log('save sign');
       });
+
     }
   };
 });
