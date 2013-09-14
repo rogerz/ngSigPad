@@ -5,29 +5,31 @@ var app = angular.module('ngSignPadApp');
 app.controller('SignPadCtrl', [
   '$scope',
   function ($scope) {
-    function Param(label, value, parseFn) {
-      this.label = label;
+    function Param(name, value, label, parseFn) {
+      this.name = name;
       this.value = value;
-      this.parse = parseFn || String;
+      this.label = label || name;
+      this.parse = parseFn || parseFloat;
     }
 
-    $scope.params = {
-      maxWidth: new Param('max', 2.5, parseFloat),
-      color: new Param('color', 'black', String)
-    };
+    $scope.params = [
+      new Param('maxWidth', 2.5, 'max width'),
+      new Param('minWidth', 0.5, 'min width'),
+      new Param('velocityWeighFilter', 0.7, 'sensitivity'),
+      new Param('color', 'black', 'color', String)
+    ];
 
     function updateConfig() {
-      var opt = {};
-      for (var key in $scope.params) {
-        var param = $scope.params[key];
-        opt[key] = param.parse(param.value);
+      var opts = {};
+      for (var i in $scope.params) {
+        var param = $scope.params[i];
+        opts[param.name] = param.parse(param.value);
       }
-      $scope.signPad.config(opt);
+      $scope.signPad.config(opts);
     }
 
-    for (var key in $scope.params) {
-      var param = $scope.params[key];
-      $scope.$watch(param.value, updateConfig);
+    for (var i in $scope.params) {
+      $scope.$watch('params[' + i + '].value', updateConfig);
     }
   }
 ]);

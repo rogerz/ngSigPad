@@ -7,7 +7,7 @@
     <button id="sign-pad-save">save</button>
   </div>
   <div id="sign-pad-config">
-    <div ng-repeat="(key, param) in params">
+    <div ng-repeat="param in params">
       <label>{{param.label}}</label>
       <input ng-model="param.value" />
     </div>

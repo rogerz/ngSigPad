@@ -35,10 +35,6 @@ app.directive('signPad', function ($window) {
       elem.find('#sign-pad-save').on('click', function () {
         console.log('save sign');
       });
-
-      signPad.config = function (opt) {
-        console.log(JSON.stringify(opt));
-      };
     }
   };
 });
