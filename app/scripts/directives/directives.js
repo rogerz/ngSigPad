@@ -6,7 +6,7 @@ app.directive('signPad', function ($window) {
   return {
     templateUrl: 'directives/sign-pad.html',
     restrict: 'E',
-    link: function postLink(scope, elem) {
+    link: function (scope, elem) {
       var canvas = elem.find('canvas')[0];
 
       /* global SignaturePad:false */
@@ -35,6 +35,10 @@ app.directive('signPad', function ($window) {
       elem.find('#sign-pad-save').on('click', function () {
         console.log('save sign');
       });
+
+      signPad.config = function (opt) {
+        console.log(JSON.stringify(opt));
+      };
     }
   };
 });

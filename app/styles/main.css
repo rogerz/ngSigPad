@@ -29,7 +29,7 @@ body {
     height: 100%;
 }
 
-#sign-pad-btns {
+#sign-pad-overlay {
     position: absolute;
     z-index: 10;
 }
