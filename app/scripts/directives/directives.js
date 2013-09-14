@@ -9,6 +9,10 @@ app.directive('signPad', function ($window) {
     link: function postLink(scope, elem) {
       var canvas = elem.find('canvas')[0];
 
+      /* global SignaturePad:false */
+      var signPad = new SignaturePad(canvas);
+      scope.signPad = signPad;
+
       // https://github.com/szimek/signature_pad/blob/gh-pages/js/app.js
       //
       // Adjust canvas coordinate space taking into account pixel ratio,
@@ -24,10 +28,13 @@ app.directive('signPad', function ($window) {
       $window.addEventListener('resize', resizeCanvas);
       resizeCanvas();
 
-      /* global SignaturePad:false */
-      var signPad = new SignaturePad(elem.find('canvas')[0]);
-      scope.signPad = signPad;
-      return;
+      elem.find('#sign-pad-clear').on('click', function () {
+        signPad.clear();
+      });
+
+      elem.find('#sign-pad-save').on('click', function () {
+        console.log('save sign');
+      });
     }
   };
 });
