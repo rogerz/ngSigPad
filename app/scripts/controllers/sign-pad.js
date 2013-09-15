@@ -22,7 +22,14 @@ app.controller('SignPadCtrl', [
     };
 
     function updateConfig() {
-      console.log('config updated');
+      var params = $scope.params;
+      var opts = {
+        minWidth: parseFloat(params.min),
+        maxWidth: parseFloat(params.max),
+        color: 'rgb(' + params.red + ',' + params.green + ',' + params.blue + ')',
+        velocityFilterWeight: 1 - params.smooth / 100
+      };
+      $scope.signPad.config(opts);
     }
 
     for (var key in $scope.params) {
