@@ -14,7 +14,7 @@ app.controller('SignPadCtrl', [
       smooth: 70
     };
 
-    $scope.config = {show: false};
+    $scope.config = {show: true};
     $scope.toggleConfig = function () {
       var config = $scope.config;
       config.show = !config.show;
