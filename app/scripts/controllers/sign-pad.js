@@ -14,13 +14,19 @@ app.controller('SignPadCtrl', [
       smooth: 70
     };
 
-    $scope.format = function (value) {
-      return value.toString();
+    $scope.config = {show: true, label: 'config'};
+    $scope.toggleConfig = function () {
+      var config = $scope.config;
+      config.show = !config.show;
+      config.label = config.show ? 'hide' : 'config';
     };
 
-    $scope.config = {show: true, label: 'config'};
-    $scope.$watch('config.show', function () {
-      $scope.config.label = $scope.config.show ? 'hide' : 'config';
-    });
+    function updateConfig() {
+      console.log('config updated');
+    }
+
+    for (var key in $scope.params) {
+      $scope.$watch('params.' + key, updateConfig);
+    }
   }
 ]);
