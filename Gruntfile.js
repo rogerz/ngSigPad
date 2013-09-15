@@ -231,7 +231,7 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           cwd: '<%= yeoman.app %>',
-          src: ['*.html', 'views/*.html'],
+          src: ['*.html', 'views/*.html', 'directives/*.html'],
           dest: '<%= yeoman.dist %>'
         }]
       }
@@ -346,7 +346,6 @@ module.exports = function (grunt) {
     'autoprefixer',
     'concat',
     'copy:dist',
-    'cdnify',
     'ngmin',
     'cssmin',
     'uglify',
