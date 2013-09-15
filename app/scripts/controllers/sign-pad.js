@@ -14,11 +14,10 @@ app.controller('SignPadCtrl', [
       smooth: 70
     };
 
-    $scope.config = {show: true, label: 'config'};
+    $scope.config = {show: false};
     $scope.toggleConfig = function () {
       var config = $scope.config;
       config.show = !config.show;
-      config.label = config.show ? 'hide' : 'config';
     };
 
     function updateConfig() {
