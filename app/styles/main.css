@@ -30,17 +30,37 @@ body {
 }
 
 #sign-pad-overlay {
-    position: absolute;
+    position: fixed;
+    width: 100%;
+    bottom: 10px;
+    right: 10px;
     z-index: 10;
 }
 
+#sign-pad-panel {
+    position: absolute;
+    bottom: 0%;
+    right: 5%;
+    width: 10%;
+}
 #sign-pad-preview div {
     display: inline-block;
 }
 
 #sign-pad-preview {
-    margin: 10px
+    margin: 10px;
 }
+
+#sign-pad-control {
+    position: absolute;
+    bottom: 0%;
+    right: 0%;
+    display: inline-block;
+}
+#sign-pad-control button {
+    display: block;
+}
+
 #sign-pad-config slider {
     margin: 10px
 }
