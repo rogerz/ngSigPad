@@ -7,9 +7,21 @@
     <button ng-model="config.show" btn-checkbox>{{config.label}}</button>
   </div>
   <div id="sign-pad-config" ng-show="config.show">
-    <div ng-repeat="param in params">
-      <label>{{param.label}}</label>
-      <input ng-model="param.value" />
+      <slider floor="5" ceiling="20" step="1" ng-model-low="params.min" ng-model-high="params.max"></slider>
+      <slider floor="0" ceiling="255" step="1" ng-model="params.red"></slider>
+      <slider floor="0" ceiling="255" step="1" ng-model="params.green"></slider>
+      <slider floor="0" ceiling="255" step="1" ng-model="params.blue"></slider>
+      <slider floor="0" ceiling="100" step="1" ng-model="params.sens"></slider>
+  </div>
+  <div id="sign-pad-preview">
+    <div style="width:{{params.min}}px; height:{{params.min}}px;
+                border-radius:{{params.min/2}}px;
+                background:rgb({{params.red}},{{params.green}},{{params.blue}})">
+    </div>
+    <div style="width:{{params.sens/2}}%"></div>
+    <div style="width:{{params.max}}px; height:{{params.max}}px;
+                border-radius:{{params.max/2}}px;
+                background:rgb({{params.red}},{{params.green}},{{params.blue}})">
     </div>
   </div>
 </div>

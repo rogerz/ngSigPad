@@ -33,3 +33,11 @@ body {
     position: absolute;
     z-index: 10;
 }
+
+#sign-pad-preview div {
+    display: inline-block;
+}
+
+#sign-pad-config slider {
+    margin: 0;
+}
