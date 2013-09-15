@@ -11,7 +11,7 @@ app.controller('SignPadCtrl', [
       red: 127,
       green: 127,
       blue: 127,
-      sens: 70
+      smooth: 70
     };
 
     $scope.format = function (value) {

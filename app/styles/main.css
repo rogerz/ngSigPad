@@ -38,6 +38,21 @@ body {
     display: inline-block;
 }
 
+#sign-pad-preview {
+    margin: 10px
+}
 #sign-pad-config slider {
-    margin: 0;
+    margin: 10px
+}
+
+slider.red .bar {
+    background: red
+}
+
+slider.green .bar {
+    background: green
+}
+
+slider.blue .bar {
+    background: blue
 }
