@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('ngSignPadApp', [])
+angular.module('ngSignPadApp', ['ui.bootstrap'])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {

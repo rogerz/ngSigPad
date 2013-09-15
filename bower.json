@@ -6,7 +6,10 @@
     "json3": "~3.2.4",
     "es5-shim": "~2.0.8",
     "jquery": "~2.0.3",
-    "signature_pad": "https://github.com/rogerz/signature_pad.git#ng-sign-pad"
+    "signature_pad": "https://github.com/rogerz/signature_pad.git#ng-sign-pad",
+    "bootstrap-slider": "*",
+    "angular-bootstrap": "~0.6.0",
+    "bootstrap": "~3.0.0"
   },
   "devDependencies": {
     "angular-mocks": "~1.0.7",
