@@ -28,14 +28,15 @@ app.directive('signPad', function ($window) {
       $window.addEventListener('resize', resizeCanvas);
       resizeCanvas();
 
-      elem.find('#sign-pad-clear').on('click', function () {
+      elem.find('#sign-pad-clear').off('click').on('click', function (event) {
+        event.preventDefault();
         signPad.clear();
       });
 
-      elem.find('#sign-pad-save').on('click', function () {
-        console.log('save sign');
+      elem.find('#sign-pad-config').off('click').on('click', function (event) {
+        event.preventDefault();
+        scope.toggleConfig();
       });
-
     }
   };
 });

@@ -4,9 +4,9 @@
 <div id="sign-pad-overlay">
   <div id="sign-pad-control">
     <button id="sign-pad-clear">clear</button>
-    <button id="sign-pad-save">save</button>
+    <button id="sign-pad-config">{{config.label}}</button>
   </div>
-  <div id="sign-pad-config">
+  <div id="sign-pad-config" ng-show="config.show">
     <div ng-repeat="param in params">
       <label>{{param.label}}</label>
       <input ng-model="param.value" />

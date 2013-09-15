@@ -5,6 +5,21 @@ var app = angular.module('ngSignPadApp');
 app.controller('SignPadCtrl', [
   '$scope',
   function ($scope) {
+    // show/hide config panel
+    $scope.config = {
+      show: false,
+      label: 'config'
+    };
+
+    $scope.toggleConfig = function () {
+      $scope.$apply(function () {
+        var config = $scope.config;
+        config.show = !config.show;
+        config.label = config.show ? 'hide' : 'config';
+      });
+    };
+
+    // configurable parameters
     function Param(name, value, label, parseFn) {
       this.name = name;
       this.value = value;
