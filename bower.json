@@ -10,8 +10,7 @@
     "bootstrap": "~3.0.0",
     "angular-mocks": "1.2.0-rc.2",
     "angular-scenario": "1.2.0-rc.2",
-    "angular-route": "~1.2.0-rc.2",
-    "angular-slider": "~0.1.6"
+    "angular-route": "~1.2.0-rc.2"
   },
   "devDependencies": {
     "angular-mocks": "*",

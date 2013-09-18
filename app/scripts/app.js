@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('ngSignPadApp', ['ngRoute', 'uiSlider'])
+angular.module('ngSignPadApp', ['ngRoute'])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
