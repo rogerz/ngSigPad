@@ -7,7 +7,7 @@
 }
 
 #sign-pad-overlay {
-    position: fixed;
+    position: absolute;
     width: 200px;
     top: 0;
     right: 0;
@@ -22,11 +22,6 @@
     margin: 10px;
 }
 
-#sign-pad-btns button {
-    float: right:
-    display: inline-block;
-}
-
 #sign-pad-panel {
     position: absolute;
     top: 40px;
@@ -34,10 +29,18 @@
     width: 100%;
     margin: 5px 10px 5px 10px;
 }
+
+#sign-pad-params label {
+    width: 60px;
+    /* fix vertical align with input */
+    position: relative;
+    top: -14px;
+}
+
 .sign-pad-param {
-    display: block;
     padding: 10px 0 10px 0;
-    width: 100%;
+    width: auto;
+    cursor: pointer;
 }
 
 #sign-pad-preview div {

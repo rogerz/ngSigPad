@@ -4,20 +4,21 @@ var app = angular.module('ngSignPadApp');
 
 app.directive('signPad', function ($window) {
   function controller($scope) {
-    function Param(name, value, min, max, step) {
+    function Param(name, value, min, max, step, label) {
       this.name = name;
       this.value = value;
       this.min = min;
       this.max = max;
       this.step = step;
+      this.label = label;
     }
     $scope.params = [
-      new Param('min', 10, 5, 20, 1),
-      new Param('max', 15, 5, 20, 1),
-      new Param('red', 127, 0, 255, 1),
-      new Param('green', 127, 0, 255, 1),
-      new Param('blue', 127, 0, 255, 1),
-      new Param('smooth', 70, 0, 100, 1)
+      new Param('min', 10, 5, 20, 1, 'width'),
+      new Param('max', 15, 5, 20, 1, 'width'),
+      new Param('red', 90, 0, 255, 1, 'red'),
+      new Param('green', 90, 0, 255, 1, 'green'),
+      new Param('blue', 90, 0, 255, 1, 'blue'),
+      new Param('smooth', 70, 0, 100, 1, 'smooth')
     ];
 
     $scope.panel = {
