@@ -14,11 +14,15 @@ app.directive('signPad', function ($window) {
     $scope.params = [
       new Param('min', 10, 5, 20, 1),
       new Param('max', 15, 5, 20, 1),
-      new Param('red', 125, 0, 255, 1),
-      new Param('green', 125, 0, 255, 1),
-      new Param('blue', 125, 0, 255, 1),
+      new Param('red', 127, 0, 255, 1),
+      new Param('green', 127, 0, 255, 1),
+      new Param('blue', 127, 0, 255, 1),
       new Param('smooth', 70, 0, 100, 1)
     ];
+
+    $scope.panel = {
+      show: true
+    };
   }
 
   return {
@@ -51,12 +55,20 @@ app.directive('signPad', function ($window) {
         replay: function () {signPad.replay(); }
       };
 
+      scope.vals = {};
+
       function updateConfig() {
         var params = scope.params;
-        var vals = {};
+        var vals = scope.vals = {};
         for (var i = 0; i < params.length; i++) {
           var param = params[i];
-          vals[param.name] = param.value;
+          vals[param.name] = parseInt(param.value);
+        }
+        if (vals.min > vals.max) {
+          /* swap value */
+          vals.max = vals.min + vals.max;
+          vals.min = vals.max - vals.min;
+          vals.max = vals.max - vals.min;
         }
         var opts = {
           minWidth: parseFloat(vals.min),
@@ -67,8 +79,8 @@ app.directive('signPad', function ($window) {
         signPad.config(opts);
       }
 
-      for (var key in scope.params) {
-        scope.$watch('params.' + key, updateConfig);
+      for (var i in scope.params) {
+        scope.$watch('params[' + i + '].value', updateConfig);
       }
     }
   };

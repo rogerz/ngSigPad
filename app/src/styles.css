@@ -1,0 +1,45 @@
+#sign-pad-area canvas {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#sign-pad-overlay {
+    position: fixed;
+    width: 200px;
+    top: 0;
+    right: 0;
+    margin: 0;
+    z-index: 10;
+}
+
+#sign-pad-btns {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 10px;
+}
+
+#sign-pad-btns button {
+    float: right:
+    display: inline-block;
+}
+
+#sign-pad-panel {
+    position: absolute;
+    top: 40px;
+    right: 0;
+    width: 100%;
+    margin: 5px 10px 5px 10px;
+}
+.sign-pad-param {
+    display: block;
+    padding: 10px 0 10px 0;
+    width: 100%;
+}
+
+#sign-pad-preview div {
+    display: inline-block;
+}
