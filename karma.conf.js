@@ -25,7 +25,8 @@ module.exports = function(config) {
 //      'test/mock/**/*.js',
       'test/spec/**/*.js',
       'app/directives/*.html',
-      'app/views/*.html'
+      'app/views/*.html',
+      'app/src/*'
     ],
 
     // list of files / patterns to exclude
@@ -41,7 +42,7 @@ module.exports = function(config) {
     // generate js files from html templates
     preprocessors: {
       'app/views/*.html': ['ng-html2js'],
-      'app/directives/*.html': ['ng-html2js']
+      'app/src/*.html': ['ng-html2js']
     },
 
     ngHtml2JsPreprocessor: {
